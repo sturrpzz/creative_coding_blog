@@ -69,7 +69,7 @@ const Specialisation = new Text ('Specialisation', 320, 225, louisgeogrecafe, 'r
 However, the fonts would not load. 
 
 ## Solution
-Since everything in the global scope always happen first, when I declared my class, the preload function has not happened. I decided to use textFont() in draw function, and removed customfont from my class.
+Since everything in the global scope always happen first, when I declared my class, the preload function has not happened. I decided to use `textFont()` in draw function, and removed `customfont` from my class.
 
 ```Javascript
 
