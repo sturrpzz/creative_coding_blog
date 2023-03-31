@@ -1,9 +1,18 @@
 ---
 title: Difficulties and Solutions
 publish_date: 2023-03-31
+abstract: Problems I faced with my codes and how I resolved them.
 disable_html_sanitization: true
 ---
+
+# Lack of knowledge on JavaScript
+
+<iframe width="500" height="542" src="https://editor.p5js.org/ndeji69/full/EA17R4HHa"></iframe>
+
+I was quite ambitious with my first sketch: I wanted to create swirling curves that interacts with the cursor. This sketch was my first inspiration. However, I wanted to make something that I understood, not copying others' codes without understanding anything.
+
 # Struggle to make ellipse stroke change color
+
 At first, I used `fill(‘color’)`, however, in this case, it didn’t work because `fill(‘color’)` is applied to the inside of the ellipse, not the strokes. After that, I tried using `stroke(random(255),random(255),random(255))`, but it would change the color of the strokes every frame, which was not what I wanted.
 
 ## Solution:
@@ -26,9 +35,11 @@ function rand_col () {
 ```
 
 # Unable to load font pt.1: 
+
 Because I put '' inside textFont() :D
 
 # Unable to load font pt.2:
+
 I used preload function to load some custom fonts at the beginning of the code, thinking it would have a similar effect as being in a global scope. Then, I tried applying these fonts to my class.
 
 ```Javascript
@@ -58,7 +69,7 @@ const Specialisation = new Text ('Specialisation', 320, 225, louisgeogrecafe, 'r
 However, the fonts would not load. 
 
 ## Solution
-I decided to use textFont() in draw function, and removed customfont from my class.
+Since everything in the global scope always happen first, when I declared my class, the preload function has not happened. I decided to use textFont() in draw function, and removed customfont from my class.
 
 ```Javascript
 
@@ -75,4 +86,4 @@ function draw {
 
 ```
 
-# Unable to apply frameRate() and rotate() to rectangle
+
